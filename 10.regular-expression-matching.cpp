@@ -10,7 +10,7 @@ public:
     bool isMatch(string s, string p) {
         // int l=s.length();
         // if(s[l-2]=="." && s[l-1]=="*") return true;
-        if (regex_match (s, regex(p)) return true;
+        if (regex_match (s, regex(p))) return true;
 
         return false;
         
