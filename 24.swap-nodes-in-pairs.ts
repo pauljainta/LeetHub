@@ -29,22 +29,27 @@ function swapPairs(head: ListNode | null): ListNode | null {
     let pointer1=head.next;
     let pointer2=pointer1.next;
 
-
-    while(pointer2.next!=null)
+    if(pointer2!=null)
     {
-        
-        let temp=pointer2;
-        pointer2=pointer2.next;
-        temp.next=pointer2.next;
-        pointer2.next=temp;
-        pointer1.next=pointer2;
+            while(pointer2.next!=null)
+            {
+                let temp=pointer2;
+                pointer2=pointer2.next;
+                temp.next=pointer2.next;
+                pointer2.next=temp;
+                pointer1.next=pointer2;
 
-        pointer1=pointer2.next;
-        pointer2=pointer1.next;
-        if(pointer2==null) break;
+                pointer1=pointer2.next;
+                pointer2=pointer1.next;
+                if(pointer2==null) break;
 
         
+            }
+
     }
+
+
+    
 
     return head;
 
