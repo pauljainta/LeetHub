@@ -21,17 +21,13 @@ function firstMissingPositive(nums: number[]): number {
        }
     }
 
-    return i;
+    for(i=0;i<nums.length;i++)
+    {
+        if(nums[i]!=i+1) return i+1;
+    }
 
 
-
-    
-
-
-
-
-
-
+    return i+1;
 };
 // @lc code=end
 
