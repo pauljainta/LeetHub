@@ -42,7 +42,8 @@ function letterCombinations(digits: string): string[] {
 
     if(digits.length==0) return [];
 
-    let chars=DigitToCharMap(digits[0]);
+   // let chars=DigitToCharMap(digits[0]);
+    backtrack(digits,0,"");
    
     
 
