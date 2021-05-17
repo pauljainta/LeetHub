@@ -60,7 +60,7 @@ function addBinary(a: string, b: string): string {
         if(i<0 && j<0)
         {
             addOneRes=addOneDigit("0","0",carry);
-            res+=addOneRes[0];
+            if(addOneRes[0]!="0") res+=addOneRes[0];
             break;
         }
         else if(i<0 && j>=0)
@@ -89,7 +89,16 @@ function addBinary(a: string, b: string): string {
 
     }
 
-    return res.split("").reverse().join("");
+    res=res.split("").reverse().join("");
+
+    i=0;
+    while(res[i]=="0" && i<res.length)
+    {
+        i++;
+    }
+    if(i==res.length) return "0";
+
+    return res.substr(i,res.length-i);
 };
 // @lc code=end
 
