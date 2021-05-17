@@ -39,11 +39,13 @@ function deleteDuplicates(head: ListNode | null): ListNode | null {
         }
         else temp2=temp2.next;
 
+
         
     }
 
     if(temp2.val==temp.val) temp.next=null;
-    
+    else temp.next=temp2;
+
 
     return head;
 
