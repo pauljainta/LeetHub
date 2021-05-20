@@ -19,7 +19,21 @@
  * }
  */
 
+function constructTree(nums:number[],low:number,high:number):TreeNode
+{
+    let mid=Math.floor(low+(high-low)/2);
+    if(low>high) return null;
+
+    let Node=new TreeNode(nums[mid]);
+    Node.left=constructTree(nums,low,mid-1);
+    Node.right=constructTree(nums,mid+1,high);
+
+    return Node;
+
+};
+
 function sortedArrayToBST(nums: number[]): TreeNode | null {
+    return constructTree(nums,0,nums.length-1);
 
 };
 // @lc code=end
